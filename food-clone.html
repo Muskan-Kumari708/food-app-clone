@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie Animated Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f8f8;
+}
+
+/* Navbar */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:#ff4d4d;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    animation:slideLeft 1s ease;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600') no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    animation:fadeIn 2s ease;
+}
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.hero-content p{
+    margin:15px 0;
+}
+
+.hero-content button{
+    padding:12px 30px;
+    background:#ff4d4d;
+    border:none;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.hero-content button:hover{
+    background:black;
+    transform:scale(1.1);
+}
+
+/* Food Section */
+.food-section{
+    padding:60px 8%;
+    text-align:center;
+}
+
+.food-section h2{
+    margin-bottom:30px;
+}
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+    animation:fadeUp 1s ease forwards;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    border-radius:8px;
+    transition:0.4s;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+/* About */
+.about{
+    padding:60px 8%;
+    text-align:center;
+    background:white;
+    animation:fadeIn 2s ease;
+}
+
+/* Contact */
+.contact{
+    padding:60px 8%;
+    text-align:center;
+}
+
+.contact input,
+.contact textarea{
+    width:60%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact button{
+    padding:10px 25px;
+    background:#ff4d4d;
+    border:none;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact button:hover{
+    background:black;
+}
+
+/* Footer */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav ul{
+        flex-direction:column;
+    }
+
+    .contact input,
+    .contact textarea{
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Foodie</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Delicious Food Delivered To You</h1>
+        <p>Fresh • Fast • Tasty</p>
+        <button>Order Now</button>
+    </div>
+</section>
+
+<section class="food-section" id="menu">
+    <h2>Popular Dishes</h2>
+    <div class="food-grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600" alt="Pizza">
+            <h3>Pizza</h3>
+            <p>Cheesy and loaded with toppings.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600" alt="Burger">
+            <h3>Burger</h3>
+            <p>Juicy grilled burger with fries.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=600&q=80" alt="Pasta">
+
+            <h3>Pasta</h3>
+            <p>Italian pasta with rich sauce.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>We provide the best quality food with fast delivery and excellent service experience.</p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea rows="4" placeholder="Your Message"></textarea><br>
+    <button>Send Message</button>
+</section>
+
+<footer>
+    <p>© 2026 Foodie | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
